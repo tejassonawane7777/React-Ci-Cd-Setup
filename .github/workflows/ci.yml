@@ -11,6 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: install Node JS
-      - uses: actions/setup-node@v6
+        uses: actions/setup-node@v6
         with:
           node-version: 24
