@@ -1,0 +1,31 @@
+name : delpoy React Cd / workflow
+
+on:
+  workflow_run:
+    workflows:[sample setup React Ci / workflow]
+  types:
+    -completed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    envrionment:
+      name: production
+    steps:
+      -name: stepup Node JS
+      uses: actions/setup-node@v6
+      with:
+        node-version: 24
+
+      -name: setup vercel cli
+      run: npm install -g vercel
+
+      -name: download production build artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: react-production-build
+        run-id: ${{ github.event.workflow_run.id}}
+        github-token: ${{github.token}}
+
+        name : deploy to vercel
+        run:
