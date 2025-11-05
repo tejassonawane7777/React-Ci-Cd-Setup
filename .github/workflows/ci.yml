@@ -29,3 +29,9 @@ jobs:
 
       - name: list directory after install
         run: ls
+
+      - name: upload production build artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: react-production-build
+          path: build/
