@@ -3,14 +3,14 @@ name : sample setup React Ci / workflow
 on:
   push:
     branches:
-      -master 
-      -main
+      - master 
+      - main
 
 jobs:
   build-and-test:
-    runs-on: ubantu-latest
+    runs-on: ubuntu-latest
     steps:
-      -name: install Node JS
-      -uses: actions/setup-node@v6
-      with:
+      - name: install Node JS
+      - uses: actions/setup-node@v6
+        with:
           node-version: 24
