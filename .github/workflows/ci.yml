@@ -17,3 +17,12 @@ jobs:
       
       - name: check node version
         run: node --version
+
+      - name: clone repository
+        uses: actions/checkout@v2
+
+      - name: list directory
+        run: ls 
+
+      - name: install dependencies
+        run: npm install
