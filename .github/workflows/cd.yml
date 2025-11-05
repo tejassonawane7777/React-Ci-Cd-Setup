@@ -2,7 +2,7 @@ name : delpoy React Cd / workflow
 
 on:
   workflow_run:
-    workflows:["sample setup React Ci / workflow"]
+    workflows: ["sample setup React Ci / workflow"]
   types: [completed]
 
 jobs:
