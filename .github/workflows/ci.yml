@@ -26,3 +26,6 @@ jobs:
 
       - name: install dependencies
         run: npm install
+
+      - name: list directory after install
+        run: ls
